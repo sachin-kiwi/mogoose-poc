@@ -1,0 +1,23 @@
+{
+  "name": "mogoose-poc",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production  node src/index.js",
+    "dev": "NODE_ENV=development nodemon src/index.js",
+    "debug": "NODE_ENV=development node --inspect src/index.js",
+    "test": "IS_TESTING=true mocha --require tests/fixtures.test.js --require tests/teardown.test.js tests/*.test.js --reporter mochawesome -options reportDir=testReports,reportFilename=automatedTestReports --timeout 400000 --exit --bail"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.7.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "migrate-mongo": "^9.0.0",
+    "mocha": "^10.1.0",
+    "mochawesome": "^7.1.3"
+  }
+}
